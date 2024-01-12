@@ -1,5 +1,5 @@
 # docs
 
-Repo to share documentation for various methods of interfacing with ultra sound.
+Repository for public information the ultra sound repeatedly shares with others.
 
 Something missing? https://t.me/smilingalex

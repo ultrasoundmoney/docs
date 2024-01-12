@@ -20,7 +20,7 @@ The API expects a single query parameter, slot, indicating the slot you'd like t
 
 For a successful call the API returns a body with a field `data` with zero or more adjustments. Amounts are in Wei.
 Example:
-```
+```json
 {
   "data": [
     {

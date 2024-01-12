@@ -8,7 +8,7 @@ The API expects a single query parameter, proposer_pubkey, indicating the propos
 
 For a successful call the API returns a body with a field `data` with a single record.
 Example:
-```
+```json
 {
     "data": {
         "last_registration_received_at": "2024-01-11T22:00:43.287Z",

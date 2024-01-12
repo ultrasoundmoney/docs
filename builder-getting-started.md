@@ -49,4 +49,4 @@ Example:
 
 In the event adjustments are requested for a slot which started less than 12 seconds ago, a 403 + JSON body with a single field `error` is returned, explaining the relay refuses to share data for slots that young.
 
-Most bad requests will similarly have a JSON body with `error` field. In rare error cases you may see no body, or a string body explaining the problem.
+Most bad requests will similarly have a JSON body with an `error` field. In rare error cases you may see no body, or a string body explaining the problem.

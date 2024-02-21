@@ -8,7 +8,7 @@
 5) top bid websocket: To make competitive bids a builder needs to be aware of the auction's bid-to-beat, the top bid. We offer a websocket to efficiently keep track. Read more here: https://github.com/ultrasoundmoney/docs/blob/main/top-bid-websocket.md
 
 ## Optimistic Relaying
-See: [builder-onboarding.md](https://github.com/ultrasoundmoney/mev-boost-relay/blob/prod-optimistic-relaying/docs/optimistic/builder-onboarding.md)
+See: [optimistic-relaying-builder-guide.md](https://github.com/ultrasoundmoney/docs/blob/main/optimistic-relaying-builder-guide.md)
 
 ## Bid Adjustments
 See: [bidadjustment.md](https://gist.github.com/blombern/c2550a5245d8c2996b688d2db5fd160b)

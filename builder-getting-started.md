@@ -11,7 +11,7 @@
 See: [optimistic-relaying-builder-guide.md](https://github.com/ultrasoundmoney/docs/blob/main/optimistic-relaying-builder-guide.md)
 
 ## Bid Adjustments
-See: [bidadjustment.md](https://gist.github.com/blombern/c2550a5245d8c2996b688d2db5fd160b)
+See: [bidadjustment.md](https://github.com/ultrasoundmoney/docs/blob/main/bid_adjustment.md)
 
 ### Data API
 To see what adjustments were made, we offer an API.

@@ -1,5 +1,5 @@
 # docs
 
-Repository for public information the ultra sound repeatedly shares with others.
+Repository for information the ultra sound team wants to share.
 
-Something missing? https://t.me/smilingalex
+Something missing? https://t.me/ultrasoundrelay

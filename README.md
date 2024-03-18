@@ -2,4 +2,4 @@
 
 Repository for information the ultra sound team wants to share.
 
-Something missing? https://t.me/ultrasoundrelay
+Talk to us: https://t.me/ultrasoundrelay

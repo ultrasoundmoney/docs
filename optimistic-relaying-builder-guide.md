@@ -39,7 +39,7 @@ Pubkey `0xcccccc` also has 0.99 ETH of collateral but `is_optimistic` is `false`
 
 ### Collateral
 
-Collateral for optimistic relaying must be posted to `relay.ultrasound.eth` from an address publicly associated with one of your builder pubkeys, ideally your primary fee recipient address. The maximum collateral per pubkey is currently 32 ETH—this value may be increased or decreased from time to time. Please contact us if you wish to stop optimistic relaying and have your collateral returned.
+Collateral for optimistic relaying must be posted to `relay.ultrasound.eth` from an address publicly associated with one of your builder pubkeys, ideally your primary fee recipient address. The maximum collateral per pubkey is currently 64 ETH—this value may be increased or decreased from time to time. Please contact us if you wish to stop optimistic relaying and have your collateral returned.
 
 ### Builder ID
 

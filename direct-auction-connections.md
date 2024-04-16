@@ -16,4 +16,10 @@ You can verify that you've been whitelisted by:
 curl -H 'X-Builder-Id: your_id' -H 'X-Api-Token: your_token' XXX.XXX.XXX.XXX:3000/relay/v1/builder/validators
 ```
 
+## Downtime
+
 Note that if you're connecting directly you'll receive `ECONNREFUSED` instead of `HTTP 503` if the auction service is unavailable.
+
+## HTTP/2
+
+For the lowest connection overhead, use HTTP/2 with keep-alive. Make sure your client supports HTTP/2 without TLS (h2c). The HTTP/1.1 to HTTP/2 upgrade might not work without TLS so you can skip the negotiation (equivalent to `curl --http2-prior-knowledge`).

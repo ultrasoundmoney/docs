@@ -10,6 +10,7 @@
 
 ## URL
 For staging / holesky you may submit to: `relay-builders-eu-holesky.ultrasound.money`.
+
 For production / mainnet you may submit to: `relay-builders-eu.ultrasound.money`.
 
 ## Optimistic Relaying

@@ -8,6 +8,10 @@
 5) top bid websocket: To make competitive bids a builder needs to be aware of the auction's bid-to-beat, the top bid. We offer a websocket to efficiently keep track. Read more here: https://github.com/ultrasoundmoney/docs/blob/main/top-bid-websocket.md
 6) use http/2 or `Connection: keep-alive` if using http/1
 
+## URL
+For staging / holesky you may submit to: `relay-builders-eu-holesky.ultrasound.money`.
+For production / mainnet you may submit to: `relay-builders-eu.ultrasound.money`.
+
 ## Optimistic Relaying
 See: [optimistic-relaying-builder-guide.md](https://github.com/ultrasoundmoney/docs/blob/main/optimistic-relaying-builder-guide.md)
 

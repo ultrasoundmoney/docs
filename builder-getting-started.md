@@ -9,9 +9,9 @@
 6) use http/2 or `Connection: keep-alive` if using http/1
 
 ## URL
-For staging / holesky you may submit to: `https://relay-builders-eu-holesky.ultrasound.money`.
+For staging / holesky use: `https://relay-builders-eu-holesky.ultrasound.money`.
 
-For production / mainnet you may submit to: `https://relay-builders-eu.ultrasound.money`.
+For production / mainnet use: `https://relay-builders-eu.ultrasound.money`.
 
 ## Optimistic Relaying
 See: [optimistic-relaying-builder-guide.md](https://github.com/ultrasoundmoney/docs/blob/main/optimistic-relaying-builder-guide.md)

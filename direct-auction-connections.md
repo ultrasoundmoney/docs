@@ -13,7 +13,7 @@ Once you've been whitelisted you can send requests directly to the IP of our auc
 You can verify that you've been whitelisted by:
 
 ```bash
-curl -H 'X-Builder-Id: your_id' -H 'X-Api-Token: your_token' XXX.ultrasound.money:3000/relay/v1/builder/validators
+curl -H 'X-Builder-Id: your_id' -H 'X-Api-Token: your_token' XXX.XXX.XXX:3000/relay/v1/builder/validators
 ```
 
 ## Downtime

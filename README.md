@@ -10,4 +10,4 @@ If you're a validator please use `https://relay.ultrasound.money`.
 
 If you're a builder submitting bids please use `https://relay-builders-eu.ultrasound.money`.
 
-If you're scraping data please use `https://relay-analytics.ultrasound.money`.
+If you're interested in our data for any other reason please use `https://relay-analytics.ultrasound.money`.

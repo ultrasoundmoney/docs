@@ -1,4 +1,4 @@
-Endpoint: ws://relay.ultrasound.money/ws/v1/top_bid
+Endpoint: ws://relay-builders-eu.ultrasound.money/ws/v1/top_bid
 
 It sends ping frames, clients should respond with pong.
 

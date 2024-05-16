@@ -200,7 +200,7 @@ On the relay side, the adjustment computation cost is negligible at ~300μs
 ## Data API
 To see what adjustments were made, we offer an API.
 
-https://relay.ultrasound.money/ultrasound/v1/data/adjustments?slot=7964405
+https://relay-analytics.ultrasound.money/ultrasound/v1/data/adjustments?slot=7964405
 
 The API expects a single query parameter, slot, indicating the slot you'd like to see the adjustments for. The earliest slot available in our production environment is `7869470`.
 

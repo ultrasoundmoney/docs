@@ -35,7 +35,7 @@ Enabled by `?adjustments=1` and by including an `adjustment_data` object in the 
 - `placeholder_transaction_proof` is the merkle proof for the last transaction in the block, which will be overwritten with a payment from `fee_payer` to `fee_recipient` if we adjust the bid.
 - `placeholder_receipt_proof` is the merkle proof for the receipt of the placeholder transaction. It's required for adjusting payments to contract addresses.
 
-Note that we rely on the gas_limit of the payout transaction being exact, i.e. 21000 for EOA recipient and variable for contract recipients.
+Note that we rely on the `gas_limit` of the payout transaction being strictly equal to gas used, i.e. 21000 for EOA recipient and variable for contract recipients.
 
 ### Computing the adjustment data
 

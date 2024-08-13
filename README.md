@@ -2,7 +2,7 @@
 
 Repository for information the ultra sound team wants to share.
 
-Talk to us: https://t.me/ultrasoundrelay
+Talk to us, or follow announcements: https://t.me/ultrasoundrelay
 
 ## Connecting
 

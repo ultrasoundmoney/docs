@@ -26,7 +26,7 @@ The following direct routes are available for the EU and US instances:
 - `/relay/v1/builder/blocks`
 - `/relay/v1/builder/validators`
 - `/eth/v1/builder/header`
-- `/ws/v1`
+- `/ws/v1/top_bid`
 
 Some builder routes (e.g. `/relay/v1/data/bidtraces/builder_blocks_received`) will only return results for the corresponding instances.
 

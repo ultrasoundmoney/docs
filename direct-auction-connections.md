@@ -1,8 +1,8 @@
 # Direct auction connections
 
-We offer the option to connect directly to our auction server, skipping a few network hops giving the fastest route for bids. To connect directly, you'll need to be whitelisted by us (contact us at https://t.me/ultrasoundrelay).
+We offer the option to connect directly to our auction server, skipping a few network hops giving the fastest route for bids. To connect directly, we want to whitelist you first (contact us at https://t.me/ultrasoundrelay).
 
-Once you've been whitelisted you can send requests directly to the IP of our auction server by including the following headers that we'll give you: `X-Builder-Id` and `X-Api-Token`. HTTPS is not supported. The following routes are available for direct connections:
+When whitelisting we'll agree on a `X-Builder-Id` and `X-Api-Token` which need to be included in every request. You'll then be able to use the private address of the EU and US auction. HTTPS is not supported. The following routes are available for direct connections:
 
 - `/relay/v1/builder/blocks`
 - `/relay/v1/builder/validators`

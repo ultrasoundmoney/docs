@@ -13,10 +13,10 @@ Currently bids are not shared between instances. Meaning, a block submitted thro
 
 ## Routes
 Direct routes are supported in eu and us. Following the guide under "Connecting" above to receive the private address. Routes are:
-- /relay/v1/builder/blocks
-- /relay/v1/builder/validators
-- /eth/v1/builder/header
-- /ws/v1
+- `/relay/v1/builder/blocks`
+- `/relay/v1/builder/validators`
+- `/eth/v1/builder/header`
+- `/ws/v1`
 
 Some builder routes e.g. blocks received (`/relay/v1/data/bidtraces/builder_blocks_received`) will only return results related to the geography found in the subdomain e.g. Subdomains are:
 - https://relay-builders-us.ultrasound.money

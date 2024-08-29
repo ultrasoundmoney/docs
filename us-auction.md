@@ -1,15 +1,15 @@
-# US Auction
+# US auction
 
-We've started experimimenting with running a US relay instance. On a high level, our relay tries to identify which relay instance would have the lowest latency connection to a proposer and route proposer requests for headers there. In simple terms, a proposer next to the US instance would not see bids from the EU instance.
+The ultra sound relay now has a second instance in the US complementing the EU instance. Proposer requests are automatically routed to the geographically closest instance.
 
-## Connecting
-Currently we only accept submissions from "directly connected builders" to our US relay. To become one follow the steps in the [direct-auctions-connection guide](https://github.com/ultrasoundmoney/docs/blob/main/direct-auction-connections.md).
-
-## Co-locating
-Our instances run on OVH bare metal machines in their VIN (Vint Hill) data center. You can find their services on offer over on us.ovhcloud.com . OVH also maintains a dashboard showing the latency to many other data centers. The closest popular one being [AWS us-east-1](https://was1-vin.smokeping.ovh.net/smokeping??&target=USA.AS16509-us-east-1&) in Virginia, 2.5ms away.
+## Bid submission
+Builders can only submit bids to the US relay instance using a direct auction connection—see instructions [here](https://github.com/ultrasoundmoney/docs/blob/main/direct-auction-connections.md). 
 
 ## Bid sharing
-Currently bids are not shared between instances. Meaning, a block submitted through our EU builder routes will not show up in the US, even if the bid is higher. This means we rely on builders to submit competitive bids to both relays at all times.
+Bids are not shared across relay instances. A block submitted to the EU instance will not be reflected in the US instance and vice versa. Builders are expected to submit bids to both instances.
+
+## Colocation
+The US instance runs on OVH bare metal machines in the VIN (Vint Hill) data center, [roughly 2.5ms from AWS us-east-1](https://was1-vin.smokeping.ovh.net/smokeping??&target=USA.AS16509-us-east-1). Colocation requires an account on [OVH US]([us.ovhcloud.com](https://us.ovhcloud.com/)).
 
 ## Routes
 Direct routes are supported in eu and us. Following the guide under "Connecting" above to receive the private address. Routes are:

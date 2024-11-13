@@ -9,6 +9,7 @@ Thank you for your interest in low-latency optimistic relaying with [the ultra s
 >3. The relay will automatically demote you for submitting a single bad bid to the relay. You will only be re-promoted after the underlying reason for submitting a bad bid is addressed.
 >4. A bad bid that wins the auction and is signed by the proposer will cause an on-chain incident, i.e. a missed slot or an insufficient proposer payment. We expect you to directly compensate the proposer the bid value plus a fixed 0.01 ETH penalty within 24 hours and send us the transaction details.
 >5. Without receiving proof the proposer was compensated within 24 hours we may use your collateral to compensate the proposer ourselves.
+>6. Starting January 1st, 2025, we reserve the right to stake your ETH builder collateral with Lido to help cover relay operation costs.
 
 ### Purpose
 
@@ -39,7 +40,8 @@ Pubkey `0xcccccc` also has 0.99 ETH of collateral but `is_optimistic` is `false`
 
 ### Collateral
 
-Collateral for optimistic relaying must be posted to `relay.ultrasound.eth` from an address publicly associated with one of your builder pubkeys, ideally your primary fee recipient address. The maximum collateral per pubkey is currently 64 ETH—this value may be increased or decreased from time to time. Please contact us if you wish to stop optimistic relaying and have your collateral returned.
+Collateral for optimistic relaying must be posted to `relay.ultrasound.eth` from an address publicly associated with one of your builder pubkeys, ideally your primary fee recipient address. The maximum collateral per pubkey is currently 64 ETH—this value may be increased or decreased from time to time. Starting January 1st, 2025, we reserve the right to stake your ETH builder collateral with Lido to cover relay operation costs. Please contact us if you wish to stop optimistic relaying and have your collateral returned.
+
 
 ### Builder ID
 
@@ -56,3 +58,4 @@ When a bad bid is submitted, even if the bid does not get signed by the proposer
 An on-chain incident, i.e. a missed slot or an insufficient proposer payment, will likely occur if a bad bid wins the auction and is signed by the proposer. (There are exceptional edge cases where an on-chain incident may not happen, including reorgs and proposer double signing.) A proposer that suffers an on-chain incident due to a bad bid needs to be made whole by the builder the full bid value plus 0.01 ETH. The fixed 0.01 ETH penalty attempts to cover missed consensus rewards as well as accounting hassle from the delayed payment.
 
 Note that we expect you, within 24 hours of the demotion, to directly send ETH to the proposer's fee recipient to compensate for a bad bid leading to an on-chain incident. Please share with us details of the corresponding transaction. Without proof the proposer was compensated within 24 hours we may use your collateral to compensate the proposer ourselves.
+

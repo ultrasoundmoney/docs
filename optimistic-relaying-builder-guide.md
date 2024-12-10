@@ -9,7 +9,7 @@ Thank you for your interest in low-latency optimistic relaying with [the ultra s
 3. The relay will automatically demote you for submitting a single bad bid to the relay. You will only be re-promoted after the underlying reason for submitting a bad bid is addressed.
 4. A bad bid that wins the auction and is signed by the proposer will cause an on-chain incident, i.e. a missed slot or an insufficient proposer payment. We expect you to directly compensate the proposer the bid value plus a fixed 0.01 ETH penalty within 24 hours and send us the transaction details.
 5. Without receiving proof the proposer was compensated within 24 hours we may use your collateral to compensate the proposer ourselves.
-6. Starting January 1st, 2025, we reserve the right to stake your ETH builder collateral with Lido to help cover relay operation costs.
+6. Starting January 1st, 2025, we prefer collateral in stETH, and reserve the right to stake ETH builder collateral with Lido to help cover relay operation costs.
 
 ### Purpose
 
@@ -40,7 +40,7 @@ Pubkey `0xcccccc` also has 0.99 ETH of collateral but `is_optimistic` is `false`
 
 ### Collateral
 
-Collateral for optimistic relaying must be posted to `relay.ultrasound.eth` from an address publicly associated with one of your builder pubkeys, ideally your primary fee recipient address. The maximum collateral per pubkey is currently 64 ETH—this value may be increased or decreased from time to time. Starting January 1st, 2025, we reserve the right to stake your ETH builder collateral with Lido to cover relay operation costs. Please contact us if you wish to stop optimistic relaying and have your collateral returned.
+Collateral for optimistic relaying must be posted to `relay.ultrasound.eth` from an address publicly associated with one of your builder pubkeys, ideally your primary fee recipient address. The maximum collateral per pubkey is currently 64 ETH—this value may be increased or decreased from time to time. Starting January 1st, 2025, we reserve the right to stake your ETH builder collateral with Lido to cover relay operation costs. If possible, send stETH directly. When sending ETH, we may stake and reserve the right to return your collateral, 1:1, as stETH. Please contact us if you wish to stop optimistic relaying and have your collateral returned.
 
 ### Builder ID
 

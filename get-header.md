@@ -7,7 +7,7 @@ As headers contain bid values, historically, builders would also call the header
 To get a proposer the best bid (highest, most reliable, timely) it's helpful for us to know which call is the proposer's. Our API therefore attempts to identify to the proposer and only returns the top bid to them. When calling `GET /eth/v1/builder/header/{slot}/{parent_hash}/{pubkey}` you may see the following response codes:
 ```
 1. 200 OK                - the top header
-2. 202 No Content        - we do not have any header to give you
+2. 204 No Content        - we do not have any header to give you
 3. 403 Forbidden         - not a validator call
 4. 403 Forbidden         - validator call, but not for the current slot
 5. 429 Too Many Requests - validator call, for current slot, but already gave out a top header response.

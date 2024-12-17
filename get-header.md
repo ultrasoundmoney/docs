@@ -14,3 +14,5 @@ To get a proposer the best bid (highest, most reliable, timely) it's helpful for
 ```
 
 All 4xx responses have JSON bodies with a message explaining the same as written above. If you see these responses >1% of the time, when you are the proposer for the current slot and call us for a header, then please come talk to us https://t.me/ultrasoundrelay . We want to get you the best header.
+
+Our relay expects the proposer to call once, wait for a reply as long as they're comfortable, then 1. hit a deadline and use the best bid they do have, or 2. receive all replies early and select the best of those. There is room for flexibility on our side here, but again, please come talk to us so we can collaborate.

@@ -5,6 +5,7 @@ It sends ping frames, clients should respond with pong.
 It emits SSZ encoded data of the following (rust) types:
 ```rust
 pub struct TopBidUpdate {
+    /// Millisecond timestamp at which this became the top bid
     pub timestamp: u64,
     pub slot: u64,
     pub block_number: u64,

@@ -13,6 +13,29 @@ For staging / holesky use: `https://relay-builders-eu-holesky.ultrasound.money`.
 
 For production / mainnet use: `https://relay-builders-eu.ultrasound.money`.
 
+## Transaction Filtering
+
+The ultra sound relay supports both transaction filtering and non-filtering proposers. A proposer's filtering preference is communicated in the `/relay/v1/builder/validators` response. Possible values are `none` for no filtering, and `ofac` for filtering according to [this list](https://github.com/ultrasoundmoney/ofac-ethereum-addresses/blob/main/data.csv). By default, the endpoint only returns proposers with filtering set to `none`. To receive both filtering and non-filtering proposers in the lookahead, add the following query parameter: `?filtering=true`. A block containing filtered addresses in a filtered slot leads to a simulation failure. Below is an example response.
+
+```json
+ {
+    "slot": "11411773",
+    "validator_index": "1427827",
+    "entry": {
+      "message": {
+        "fee_recipient": "0x4675c7e5baafbffbca748158becba61ef3b0a263",
+        "gas_limit": "36000000",
+        "timestamp": "1734571166",
+        "pubkey": "0xb6e245c28445330cb858d52ad37190b41f8933bafa15a426d12864fac8af4b209920bc44374f15b2ccbab9fcd70cc9bb"
+      },
+      "signature": "0x8dc6efff70584da37d256459c39e457681574d615263c248af9c7cc46cfef104994762b9fc7d3a2ddf594359d2a258170e507fe09c9984405e11559b1b35ea6da4dc5a8b1938a6afd46ced846d0d4ffd3a8643b1ec794e371951aa790a07f4c8"
+    },
+    "preferences": {
+      "filtering": "none"
+    }
+  },
+```
+
 ## Optimistic Relaying
 See: [optimistic-relaying-builder-guide.md](https://github.com/ultrasoundmoney/docs/blob/main/optimistic-relaying-builder-guide.md)
 

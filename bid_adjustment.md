@@ -9,9 +9,12 @@ To achieve this, we need block submissions to include some additional data. As a
 Enabled by `?adjustments=1` and by including an `adjustment_data` object in the normal block submission:
 
 ```json
+// Electra
 {
  "message": { ... },
  "execution_payload": { ... },
+ "blobs_bundle": { ... },
+ "execution_requests": { ... },
  "signature": "0xa2def54237bfeb1d9269365e853b5469f68b7f4ad51ca7877e406ca94bc8a94bba54c14024b2f9ed37d8690bb9fac52600b7ff52b96b843cd8529e9ecc2497a0ecd5db8372e2049156e0fa9334d5c1b0ef642f192675b586ecbe6fc381178f88",
  "adjustment_data": {
     "state_root": "0x74f74d15dcb00ba194901136f2019dd6be2d4c88c822786df90561a550193899",
@@ -39,7 +42,7 @@ Note that we rely on the `gas_limit` of the payout transaction being strictly eq
 
 ### Computing the adjustment data
 
-See example of our testnet builder with adjustments: https://github.com/blombern/builder/tree/deneb-adjusting
+See example of our testnet builder with adjustments: https://github.com/blombern/rbuilder/tree/adjustments
 
 
 ### SSZ encoding

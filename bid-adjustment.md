@@ -67,7 +67,7 @@ An example of the SSZ codec in go: https://github.com/blombern/adjustable-bid-en
 
 ## Testing
 
-We've successfully tested this feature using our own builder on Goerli, and we're now looking to integrate with external builders. Testing can be done on either Goerli or Mainnet (with optimistic relaying disabled).
+Testing can be done on either Hoodi, or Mainnet (with optimistic relaying disabled).
 
 ## Performance considerations
 

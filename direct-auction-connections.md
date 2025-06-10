@@ -6,7 +6,6 @@ When whitelisting we'll agree on a `X-Builder-Id` and `X-Api-Token` which need t
 
 - `/relay/v1/builder/blocks`
 - `/relay/v1/builder/validators`
-- `/eth/v1/builder/header`
 - `/ws/v1`
 
 

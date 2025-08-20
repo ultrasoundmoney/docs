@@ -49,3 +49,25 @@ pub struct AdjustmentDataV2 {
 A working POC builder implementation can be found [here](https://github.com/blombern/rbuilder/tree/optimistic-v3-adjustments).
 
 The endpoint is `/relay/v3/builder/headers` and it's available on our Hoodi relay: `relay-builders-eu-hoodi.ultrasound.money`/`relay-builders-us-hoodi.ultrasound.money`. Only SSZ submissions are supported for now.
+
+## Error responses
+
+If the payload retrieval from the builder supplied URL fails, the builder is demoted. V3 submissions from pessimistic builders will be rejected and receive the following HTTP 400 response:
+
+```json
+{
+  "code": 400,
+  "message": "received v3 submission from pessimistic builder"
+}
+```
+
+This can be used as a trigger to fall back to V1 submissions until re-promotion.
+
+Another rejection case is if the value of the submission exceeds builder collateral. In these cases the response will be:
+
+```json
+{
+  "code": 400,
+  "message": "received v3 submission with value above optimistic collateral"
+}
+```

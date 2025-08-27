@@ -1,8 +1,8 @@
 # Bid adjustment
 
-Bid adjustment is a new experimental feature for the ultra sound relay. The idea is that we try to adjust bids, ideally to `secondBestBid + 1 WEI`, capturing the delta (if any) from our latency advantage compared the the next best relay. Our goal is to make operating and developing (e.g. geo distribution, proper cancellations) the relay sustainable by having an incentive tied to its performance.
+Bid adjustment is feature of the ultra sound relay. The idea is that we try to adjust bids, ideally to `secondBestBid + 1 WEI`, capturing the delta (if any) from our latency advantage compared the the next best relay. Our goal is to make operating and developing (e.g. geo distribution, proper cancellations) the relay sustainable by having an incentive tied to its performance.
 
-To achieve this, we need block submissions to include some additional data. As an incentive for builders to integrate we offer a percentage of the bid delta as a "kickback". During November 100% of the delta will be kicked back to builders.
+To achieve this, we need block submissions to include some additional data. As an incentive for builders to integrate we offer a percentage of the bid delta as a "kickback".
 
 ## Technical implementation
 

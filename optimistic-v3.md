@@ -48,7 +48,7 @@ pub struct AdjustmentDataV2 {
 
 A working POC builder implementation can be found [here](https://github.com/blombern/rbuilder/tree/optimistic-v3-adjustments).
 
-The endpoint is `/relay/v3/builder/headers` and it's available on our Hoodi relay: `relay-builders-eu-hoodi.ultrasound.money`/`relay-builders-us-hoodi.ultrasound.money`. Only SSZ submissions are supported for now.
+The endpoint is `/relay/v3/builder/headers` and it's available on our Hoodi relay: `relay-builders-eu-hoodi.ultrasound.money`/`relay-builders-us-hoodi.ultrasound.money`.
 
 ## Error responses
 

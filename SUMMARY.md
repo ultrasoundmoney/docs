@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Relay docs](README.md)
+* [Home](README.md)
+* [Relay docs](<README (1).md>)
 * [Bid adjustment](bid-adjustment.md)
 * [Bid Forwarding](bid-forwarding.md)
 * [New Builder Guide](builder-getting-started.md)

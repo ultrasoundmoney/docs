@@ -1,11 +1,11 @@
 ---
-description: Index for ultra sound docs.
+description: index for ultra sound documentation.
 ---
 
-# Home
+# home
 
-for proposers -> \[link]
+if you're an operator of proposers and would like to receive higher paying blocks, check out the [proposers](proposers/ "mention") section.
 
-for builders -> \[link]
+if you're a builder looking to submit blocks, check out the [builders](builders/ "mention") section.
 
-for the data curious -> \[link]
+for the data curious check out [data-researchers.md](data-researchers.md "mention").

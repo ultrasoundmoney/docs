@@ -1,8 +1,11 @@
+# top bid websocket
+
 Endpoint: `ws://relay-builders-eu.ultrasound.money/ws/v1/top_bid`
 
 It sends ping frames, clients should respond with pong.
 
 It emits SSZ encoded data of the following (rust) types:
+
 ```rust
 pub struct TopBidUpdate {
     /// Millisecond timestamp at which this became the top bid
@@ -16,6 +19,8 @@ pub struct TopBidUpdate {
     pub value: U256,
 }
 ```
+
+Note that each (slot, parent\_hash) combination is a separate auction with its own top bid.
 
 Use persistent connections if possible. When closing connections please make sure to close the socket properly.
 

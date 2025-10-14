@@ -1,6 +1,8 @@
 # top bid websocket
 
-Endpoint: `ws://relay-builders-eu.ultrasound.money/ws/v1/top_bid`
+Endpoints (also available on the respective direct auction hosts): \
+`ws://relay-builders-eu.ultrasound.money/ws/v1/top_bid`\
+`ws://relay-builders-us.ultrasound.money/ws/v1/top_bid`&#x20;
 
 It sends ping frames, clients should respond with pong.
 

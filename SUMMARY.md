@@ -17,5 +17,5 @@
   * [top bid websocket](builders/top-bid-websocket.md)
   * [TYO auction](builders/tyo-auction.md)
   * [US auction](builders/us-auction.md)
-  * [data ap](builders/data-ap.md)
+  * [data api](builders/data-api.md)
 * [data researchers](data-researchers.md)

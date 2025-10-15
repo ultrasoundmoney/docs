@@ -1,10 +1,11 @@
-# Optimistic V3
+# optimistic v3
 
 NOTE: this API is still being tested and is subject to change.
 
 This document describes the ultra sound relay V3 submission endpoint, which includes adjustments. For a description of vanilla V3 submissions, see [here](https://ethresear.ch/t/introduction-to-optimistic-v3-relays/22066). Like vanilla V3 submissions, these are only available for optimistic/collateralized builders. Unlike for our V1 submissions, submission adjustability is not optional. This is done to cover the extra operational expense of a builder dependency in the critical path, and to enable value-only bid updates in the future.
 
 Submissions are otherwise identical to vanilla V3, except they include adjustment data:
+
 ```rust
 // Electra submission
 pub struct HeaderSubmission {
@@ -62,6 +63,15 @@ If the payload retrieval from the builder supplied URL fails, the builder is dem
 ```
 
 This can be used as a trigger to fall back to V1 submissions until re-promotion.
+
+In some cases, we may be temporarily unable to verify a builder's optimistic status, i.e. we don't know if the builder is optimistic or not. This could happen from time to time, especially early in the bidding window. We distinguish this case from a true pessimistic status by returning the following HTTP 503 response:
+
+```json
+{
+  "code": 503,
+  "message": "temporarily unable to verify builder optimistic collateral"
+}
+```
 
 Another rejection case is if the value of the submission exceeds builder collateral. In these cases the response will be:
 

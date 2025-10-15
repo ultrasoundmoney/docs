@@ -1,4 +1,4 @@
-# Bid adjustment
+# bid adjustment
 
 Bid adjustment is feature of the ultra sound relay. The idea is that we try to adjust bids, ideally to `secondBestBid + 1 WEI`, capturing the delta (if any) from our latency advantage compared the the next best relay. Our goal is to make operating and developing (e.g. geo distribution, proper cancellations) the relay sustainable by having an incentive tied to its performance.
 
@@ -32,18 +32,17 @@ Enabled by `?adjustments=1` and by including an `adjustment_data` object in the 
 }
 ```
 
-- `builder_address` is the usual builder address that pays the proposer in the last transaction of the block. When we adjust a bid, this transaction is overwritten by a transaction from the collateral account `fee_payer_address`. If we don't adjust the bid, `builder_address` pays the proposer as per usual.
-- `fee_payer_address` is an account which holds the ETH used by the relay to pay the fee recipient. Builders fund this account to use the feature. All adjusted bids are paid from this address.
-- `fee_recipient_address` is the proposer's fee recipient.
-- `placeholder_transaction_proof` is the merkle proof for the last transaction in the block, which will be overwritten with a payment from `fee_payer` to `fee_recipient` if we adjust the bid.
-- `placeholder_receipt_proof` is the merkle proof for the receipt of the placeholder transaction. It's required for adjusting payments to contract addresses.
+* `builder_address` is the usual builder address that pays the proposer in the last transaction of the block. When we adjust a bid, this transaction is overwritten by a transaction from the collateral account `fee_payer_address`. If we don't adjust the bid, `builder_address` pays the proposer as per usual.
+* `fee_payer_address` is an account which holds the ETH used by the relay to pay the fee recipient. Builders fund this account to use the feature. All adjusted bids are paid from this address.
+* `fee_recipient_address` is the proposer's fee recipient.
+* `placeholder_transaction_proof` is the merkle proof for the last transaction in the block, which will be overwritten with a payment from `fee_payer` to `fee_recipient` if we adjust the bid.
+* `placeholder_receipt_proof` is the merkle proof for the receipt of the placeholder transaction. It's required for adjusting payments to contract addresses.
 
-Note that we rely on the `gas_limit` of the payout transaction being strictly equal to gas used, i.e. 21000 for EOA recipient and variable for contract recipients.
+Note that we rely on the `gas_limit` of the payout transaction being strictly equal to `gas_used`, i.e. 21000 for EOA recipient, and equal to `gas_used` during execution for contract recipients.
 
 ### Computing the adjustment data
 
 See example of our testnet builder with adjustments: https://github.com/blombern/rbuilder/tree/adjustments
-
 
 ### SSZ encoding
 
@@ -73,17 +72,18 @@ Testing can be done on either Hoodi, or Mainnet (with optimistic relaying disabl
 
 The additional size to an uncompressed json payload (worst case) is 22KB. We recommend SSZ encoding payloads for significantly faster decoding.
 
-On the relay side, the adjustment computation cost is negligible at ~300μs
+On the relay side, the adjustment computation cost is negligible at \~300μs
 
 ## Data API
+
 To see what adjustments were made, we offer an API.
 
 https://relay-analytics.ultrasound.money/ultrasound/v1/data/adjustments?slot=7964405
 
 The API expects a single query parameter, slot, indicating the slot you'd like to see the adjustments for. The earliest slot available in our production environment is `7869470`.
 
-For a successful call the API returns a body with a field `data` with zero or more adjustments. Amounts are in Wei.
-Example:
+For a successful call the API returns a body with a field `data` with zero or more adjustments. Amounts are in Wei. Example:
+
 ```json
 {
   "data": [

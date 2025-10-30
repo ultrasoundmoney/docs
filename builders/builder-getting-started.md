@@ -22,6 +22,10 @@ For staging / holesky use: `https://relay-builders-eu-holesky.ultrasound.money` 
 
 For production / mainnet use: `https://relay-builders-eu.ultrasound.money` or `https://relay-builders-us.ultrasound.money`.
 
+## Bid Sequencing
+
+By default we use `received_at`, i.e. the timestamp at which we received your bid but prior to downloading the full HTTP body, to sequence your bids. Meaning updates to your bid only happen if `received_at_new` > `received_at_current`. Due to unpredictability in network latency, you may wish to determine the sequencing yourself. To do this, include a HTTP header `x-sequence` with a monotonically increasing uint64 as the value. We then use this to perform the same check as with `recieved_at`, i.e. `sequence_new` > `sequence_current` before updating your bid.
+
 ## Transaction Filtering
 
 The ultra sound relay supports both transaction filtering and non-filtering proposers. A proposer's filtering preference is communicated in the `/relay/v1/builder/validators` response. Possible values are `none` for no filtering, and `ofac` for filtering according to  [ofac.md](../proposers/ofac.md "mention"). By default, the endpoint only returns proposers with filtering set to `none`. To receive both filtering and non-filtering proposers in the lookahead, add the following query parameter: `?filtering=true`. A block containing filtered addresses in a filtered slot leads to a simulation failure. Below is an example response.

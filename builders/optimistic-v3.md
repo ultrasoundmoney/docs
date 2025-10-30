@@ -55,6 +55,17 @@ The endpoint is `/relay/v3/builder/headers` and it's available on our Hoodi rela
 
 ## Error responses
 
+V3 Submissions are available only for whitelisted builders who have shown that they can reliably deliver the corresponding payload in time. \
+If you see the below error it means that your builder is currently not whitelisted for v3. You'll need to contact the ultrasound team to change that:
+
+```json
+{
+  "code": 400,
+  "message": "received v3 submission from builder without header_submissions enabled"
+}
+```
+
+\
 If the payload retrieval from the builder supplied URL fails, the builder is demoted. V3 submissions from pessimistic builders will be rejected and receive the following HTTP 400 response:
 
 ```json
@@ -66,12 +77,12 @@ If the payload retrieval from the builder supplied URL fails, the builder is dem
 
 This can be used as a trigger to fall back to V1 submissions until re-promotion.
 
-In some cases, we may be temporarily unable to verify a builder's optimistic status, i.e. we don't know if the builder is optimistic or not. This could happen from time to time, especially early in the bidding window. We distinguish this case from a true pessimistic status by returning the following HTTP 503 response:
+In some cases, we may be temporarily unable to verify a builder's optimistic/v3 status, i.e. we don't know if the builder is optimistic or not and wether v3 is enabled for it. This could happen from time to time, especially early in the bidding window. We distinguish this case from a true pessimistic status by returning the following HTTP 503 response:
 
 ```json
 {
   "code": 503,
-  "message": "temporarily unable to verify builder optimistic collateral"
+  "message": "temporarily unable to verify builder v3 eligibility"
 }
 ```
 

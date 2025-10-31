@@ -2,10 +2,10 @@
 
 ## First steps
 
-1. colocation: Locate your builder close to relays. The ultra sound relay is at OVH Roubaix (RBX), France and OVH Vint Hill (VIN), US.
+1. colocation: Locate your builder close to relays. The ultra sound relay is at OVH Roubaix (RBX), France, OVH Vint Hill (VIN), US, and Latitude Tokyo (TYO).
 2. submission format: Submit your bids using SSZ (not JSON) and GZIP compression.
 3. submission frequency: The ultra sound relay does not have rate limiting which means you can increase the frequency at which you send blocks to us. Top builders make a few thousand submissions per block landed.
-4. optimistic relaying: This is a massive relay-side optimization where bids are processed optimistically, skipping simulation and saving on simulation latency. Almost all builders (22 of them!) have enabled optimistic relaying with the ultra sound relay—it's hard to compete without. You can find a link to the on-boarding guide below.
+4. optimistic relaying: This is a massive relay-side optimization where bids are processed optimistically, skipping simulation and saving on simulation latency. Almost all builders (22 of them!) have enabled optimistic relaying with the ultra sound relay—it's hard to compete without. For more detail see: [optimistic-relaying-builder-guide.md](optimistic-relaying-builder-guide.md "mention").
 5. top bid websocket: To make competitive bids a builder needs to be aware of the auction's bid-to-beat, the top bid. We offer a websocket to efficiently keep track. Read more here: https://github.com/ultrasoundmoney/docs/blob/main/top-bid-websocket.md
 6. use http/2 or `Connection: keep-alive` if using http/1
 
@@ -16,11 +16,18 @@
 https://relay-builders-eu-hoodi.ultrasound.money
 # hoodi - us
 https://relay-builders-us-hoodi.ultrasound.money
+# hoodi - jp (whitelist only)
+https://relay-builders-jp-hoodi.ultrasound.money
+
+# mainnet - eu
+https://relay-builders-eu.ultrasound.money
+# mainnet - us
+https://relay-builders-us.ultrasound.money
+# mainnet - jp (whitelist only)
+https://relay-builders-jp.ultrasound.money
 ```
 
-For staging / holesky use: `https://relay-builders-eu-holesky.ultrasound.money` or `https://relay-builders-us-holesky.ultrasound.money`.
-
-For production / mainnet use: `https://relay-builders-eu.ultrasound.money` or `https://relay-builders-us.ultrasound.money`.
+When submitting to only a subset of these we still do our best to offer your bid to proposers everywhere. Bids submitted to auctions further from the proposer are at a natural latency based disadvantage. For more detail see: [bid-forwarding.md](bid-forwarding.md "mention") .
 
 ## Bid Sequencing
 
@@ -48,10 +55,6 @@ The ultra sound relay supports both transaction filtering and non-filtering prop
     }
   },
 ```
-
-## Optimistic Relaying
-
-see: [optimistic-relaying-builder-guide.md](optimistic-relaying-builder-guide.md "mention")
 
 ## Bid Adjustments
 

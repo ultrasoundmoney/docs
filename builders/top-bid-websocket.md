@@ -1,8 +1,12 @@
 # top bid websocket
 
-Endpoints (also available on the respective direct auction hosts): \
-`ws://relay-builders-eu.ultrasound.money/ws/v1/top_bid`\
-`ws://relay-builders-us.ultrasound.money/ws/v1/top_bid`&#x20;
+Provides a stream of updates of the auction's current top bid.
+
+Endpoints (also available on the respective direct auction hosts):&#x20;
+
+* `ws://relay-builders-eu.ultrasound.money/ws/v1/top_bid`
+* `ws://relay-builders-us.ultrasound.money/ws/v1/top_bid`&#x20;
+* `ws://relay-builders-jp.ultrasound.money/ws/v1/top_bid`
 
 It sends ping frames, clients should respond with pong.
 
@@ -27,3 +31,5 @@ Note that each (slot, parent\_hash) combination is a separate auction with its o
 Use persistent connections if possible. When closing connections please make sure to close the socket properly.
 
 You can find an example implementation here: https://github.com/ultrasoundmoney/top-bid-websocket-client
+
+If <1ms latency matters to you, the websocket is available directly from the auction server as well, see [direct-auction-connections.md](direct-auction-connections.md "mention").

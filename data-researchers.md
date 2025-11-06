@@ -1,6 +1,13 @@
 # data researchers
 
-If you're interested in our data but not to receive bids as a proposer, or submit them as a builder, please use `https://relay-analytics.ultrasound.money` as the host.
+If you're interested in our data but not to receive bids as a proposer, or submit them as a builder, please use hosts:
+
+```bash
+# mainnet
+https://relay-analytics.ultrasound.money
+# hoodi
+https://relay-analytics-hoodi.ultrasound.money
+```
 
 standard routes supported across relays are described at: [https://flashbots.github.io/relay-specs/#/Data](https://flashbots.github.io/relay-specs/#/Data) .
 

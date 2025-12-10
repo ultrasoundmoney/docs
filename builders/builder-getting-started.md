@@ -56,6 +56,52 @@ The ultra sound relay supports both transaction filtering and non-filtering prop
   },
 ```
 
+## Block Deltas
+
+This feature was first conceived and implemented by Titan relay.&#x20;
+
+To optimize bandwidth utilization we support sending _dehydrated_ payloads for V1 submissions. A builder may submit transactions and blobs only once per slot. Subsequent submissions within the same slot can reference those orders by their hash or proof, and the relay will rehydrate the payload using a local cache.&#x20;
+
+```rust
+// All types are assuming Fulu fork
+
+struct DehydratedBidSubmission {
+    message: BidTrace,
+    execution_payload: ExecutionPayload,
+    blobs_bundle: DehydratedBlobsBundle,
+    execution_requests: ExecutionRequests,
+    signature: BlsSignature,
+    tx_root: Option<B256>,
+}
+
+/// Identical to above, but with adjustment data added as last field.
+/// See bid adjustment docs for more information.
+struct AdjustableDehydratedBidSubmission {
+    message: BidTrace,
+    execution_payload: ExecutionPayload,
+    blobs_bundle: DehydratedBlobsBundle,
+    execution_requests: ExecutionRequests,
+    signature: BlsSignature,
+    tx_root: Option<B256>,
+    adjustment_data: AdjustmentData,
+}
+
+struct DehydratedBlobs {
+    /// List of proofs to re-hydrate the BlobsBundle
+    proofs: Vec<KzgProof>,
+    new_items: Vec<BlobItem>,
+}
+
+struct BlobItem {
+    proof: Vec<KzgProof>,
+    commitment: KzgCommitment,
+    blob: Blob,
+}
+```
+
+The transaction hashes are directly reusing the `transaction` field in the `ExecutionPayload`. To enable block deltas make sure to add a `x-hydrate` header to the submission.
+
 ## Bid Adjustments
 
 see: [bid-adjustment.md](bid-adjustment.md "mention")
+

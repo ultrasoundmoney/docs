@@ -1,4 +1,4 @@
-# Optimistic relaying—builder guide
+# optimistic relaying
 
 Thank you for your interest in low-latency optimistic relaying with [the ultra sound relay](https://relay.ultrasound.money)! This document is an onboarding guide for you, Ethereum block builder. Please take the time to understand it :)
 
@@ -53,6 +53,6 @@ When a bad bid is submitted, even if the bid does not get signed by the proposer
 
 ### On-chain incidents
 
-An on-chain incident, i.e. a missed slot or an insufficient proposer payment, will likely occur if a bad bid wins the auction and is signed by the proposer. (There are exceptional edge cases where an on-chain incident may not happen, including reorgs and proposer double signing.) A proposer that suffers an on-chain incident due to a bad bid needs to be made whole by the builder the full bid value plus 0.01 ETH. The fixed 0.01 ETH penalty attempts to cover missed consensus rewards as well as accounting hassle from the delayed payment.
+An on-chain incident, i.e. a missed slot or an insufficient proposer payment, will likely occur if a bad bid wins the auction and is signed by the proposer. (There are exceptional edge cases where an on-chain incident may not happen, including reorgs and proposer double signing.) A proposer that suffers an on-chain incident due to a bad bid needs to be made whole by the builder up to 10 ETH of bid value plus 0.01 ETH. The fixed 0.01 ETH penalty attempts to cover missed consensus rewards as well as accounting hassle from the delayed payment.
 
 Note that we expect you, within 24 hours of the demotion, to directly send ETH to the proposer's fee recipient to compensate for a bad bid leading to an on-chain incident. Please share with us details of the corresponding transaction. Without proof the proposer was compensated within 24 hours we may use your collateral to compensate the proposer ourselves.

@@ -30,6 +30,6 @@ Note that each (slot, parent\_hash) combination is a separate auction with its o
 
 Use persistent connections if possible. When closing connections please make sure to close the socket properly.
 
-You can find an example implementation here: https://github.com/ultrasoundmoney/top-bid-websocket-client
+You can find an example implementation here: [https://github.com/ultrasoundmoney/top-bid-websocket-client](https://github.com/ultrasoundmoney/top-bid-websocket-client)
 
 If <1ms latency matters to you, the websocket is available directly from the auction server as well, see [direct-auction-connections.md](direct-auction-connections.md "mention").

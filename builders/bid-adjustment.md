@@ -48,18 +48,39 @@ See example of our testnet builder with adjustments: https://github.com/blombern
 
 We strongly suggest SSZ (+ gzip) encoding all submissions for the best performance. The `AdjustmentData` is expected as the last field in `SubmitBlockRequest` (see JSON example above). Here's how to encode `AdjustmentData` as SSZ:
 
-```
-state_root: FixedVector<u8; 32>
-transactions_root: FixedVector<u8; 32>
-receipts_root: FixedVector<u8; 32>
-builder_address: FixedVector<u8; 20>
-builder_proof: VariableList<VariableList<u8>>
-fee_recipient_address: FixedVector<u8; 20>
-fee_recipient_proof: VariableList<VariableList<u8>>
-fee_payer_address: FixedVector<u8; 20>
-fee_payer_proof: VariableList<VariableList<u8>>
-placeholder_transaction_proof: VariableList<VariableList<u8>>
-placeholder_receipt_proof: VariableList<VariableList<u8>>
+```rust
+pub struct AdjustmentDataV1 {
+    pub state_root: B256,
+    pub transactions_root: B256,
+    pub receipts_root: B256,
+    pub builder_address: Address,
+    pub builder_proof: Vec<Bytes>,
+    pub fee_recipient_address: Address,
+    pub fee_recipient_proof: Vec<Bytes>,
+    pub fee_payer_address: Address,
+    pub fee_payer_proof: Vec<Bytes>,
+    pub placeholder_transaction_proof: Vec<Bytes>,
+    pub placeholder_receipt_proof: Vec<Bytes>,
+}
+
+// New version. Includes `placeholder_gas_used` which allows us to relax the 
+// gas_limit == gas_used requirement.
+pub struct AdjustmentDataV3 {
+    pub el_transactions_root: B256,
+    pub el_withdrawals_root: B256,
+    pub builder_address: Address,
+    pub builder_proof: Vec<Bytes>,
+    pub fee_recipient_address: Address,
+    pub fee_recipient_proof: Vec<Bytes>,
+    pub fee_payer_address: Address,
+    pub fee_payer_proof: Vec<Bytes>,
+    pub el_placeholder_transaction_proof: Vec<Bytes>,
+    pub cl_placeholder_transaction_proof: Vec<B256>,
+    pub el_placeholder_receipt_proof: Vec<Bytes>,
+    pub pre_payment_logs_bloom: Bloom,
+    pub placeholder_gas_used: u64,
+}
+
 ```
 
 An example of the SSZ codec in go: https://github.com/blombern/adjustable-bid-encoding

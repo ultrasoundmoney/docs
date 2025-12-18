@@ -24,7 +24,7 @@ pub struct AdjustableHeaderSubmission {
     pub execution_payload_header: ExecutionPayloadHeader,
     pub execution_requests: ExecutionRequests,
     pub commitments: Vec<Bytes48>,
-    // Additional field
+    // Additional field, either AdjustmentDataV2 or AdjustmentDataV3
     pub adjustment_data: AdjustmentDataV2,
 }
 
@@ -45,6 +45,24 @@ pub struct AdjustmentDataV2 {
     // New in V2: Logs bloom accrued until but not including the last (payment) transaction.
     pub pre_payment_logs_bloom: Bloom,
 }
+
+// Updated version, same as V2 but includes gas_used for the placeholder transaction.
+// With V3 we relax the gas_limit == gas_used assumption and use the provided value instead.
+pub struct AdjustmentDataV3 {
+    pub state_root: B256,
+    pub transactions_root: B256,
+    pub receipts_root: B256,
+    pub builder_address: Address,
+    pub builder_proof: Vec<Bytes>,
+    pub fee_recipient_address: Address,
+    pub fee_recipient_proof: Vec<Bytes>,
+    pub fee_payer_address: Address,
+    pub fee_payer_proof: Vec<Bytes>,
+    pub placeholder_transaction_proof: Vec<Bytes>,
+    pub placeholder_receipt_proof: Vec<Bytes>,
+    pub placeholder_gas_used: u64,
+}
+
 ```
 
 ~~A working POC builder implementation can be found~~ [~~here~~](https://github.com/blombern/rbuilder/tree/optimistic-v3-adjustments)~~.~~

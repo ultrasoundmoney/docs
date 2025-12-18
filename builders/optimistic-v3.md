@@ -46,7 +46,7 @@ pub struct AdjustmentDataV2 {
     pub pre_payment_logs_bloom: Bloom,
 }
 
-// Updated version, same as V2 but includes gas_used for the placeholder transaction.
+// Updated version, otherwise same as V2 but adds gas_used for the placeholder transaction.
 // With V3 we relax the gas_limit == gas_used assumption and use the provided value instead.
 pub struct AdjustmentDataV3 {
     pub state_root: B256,

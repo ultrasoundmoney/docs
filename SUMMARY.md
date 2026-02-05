@@ -18,4 +18,5 @@
   * [TYO auction](builders/tyo-auction.md)
   * [US auction](builders/us-auction.md)
   * [data api](builders/data-api.md)
+  * [rate limits](builders/rate-limits.md)
 * [data researchers](data-researchers.md)

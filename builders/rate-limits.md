@@ -1,12 +1,26 @@
 # rate limits
 
-by default unknown builders suffer several concrete penalties compared to seasoned builders:
+We've introduced rate limits to improve the quality, reliability and fairness of the auction across the network. There are two levels of rate limiting.
 
-1. they are rate limited.
-2. their bids need to pass simulation before becoming eligible to win. this can be overcome by the builder turning on [optimistic-relaying-builder-guide.md](optimistic-relaying-builder-guide.md "mention").
-3. their bids are larger, and take longer to download and process than optimized [optimistic-v3.md](optimistic-v3.md "mention")or [dehydrated bids](https://docs.titanrelay.xyz/builders/builder-integration#block-deltas). we're developing an offering to help builders submit bids more efficiently. contact [smilingalex](https://t.me/smilingalex) if you're interested.
+### unknown builders
 
-to overcome your bids being rate-limited [ask us to issue you an API token](https://t.me/ultrasoundrelay). this'll unlock limits entirely, right away.
+By default unknown builders are subject to stricter rate limits than authenticated builders.
 
-in the future, we plan to limit rates even for token-identified-bids to a level that is virtually free at a byte-submission-rate comparable to top builders. although top builders submit a lot, they also tend to be quite efficient. as processing bids isn't free, we may therefore ask some fee depending on how far your use exceeds that of the average top builder.
+To become an authenticated builder simply [ask us to issue you an API token](https://t.me/ultrasoundrelay) and add it to your `X-Api-Token` header when sending through requests.
+
+### authenticated builders
+
+Authenticated builders are subject to a bandwidth rate limit of 60 MB per slot per region.
+
+Based on our analysis this should be more than enough for most use cases, but we'll be monitoring usage and may adjust it over time as needed.
+
+### managing rate limits
+
+To ensure you get the most out of your rate limit we recommend:
+
+1. getting an API token and authenticating your submissions
+2. using SSZ (+ gzip) encoding all submissions
+3. considering implementing [dehydrated bids](https://docs.titanrelay.xyz/builders/builder-integration#block-deltas) or [optimistic-v3.md](optimistic-v3.md "mention") which are more efficient and will allow for more requests per slot
+4. ensuring your builder is set up to handle 429 (Too Many Requests) responses gracefully
+5. testing your builder against our `hoodi` relays to avoid unnecessary usage of your bandwidth limit on `mainnet`.
 

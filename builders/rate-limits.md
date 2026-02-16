@@ -26,4 +26,4 @@ To ensure you get the most out of your rate limit we recommend:
 
 
 
-If you find that you have special bandwidth requirements or are struggling to set up dehydrated bids or optimistic submissions, please reach out to [smilingalex](https://t.me/smilingalex) or the [ultra sound team](https://t.me/ultrasoundrelay).
+If you find that you need more bandwidth than the free tier, we do have a paid option available.  Please reach out to [smilingalex](https://t.me/smilingalex) or the [ultra sound team](https://t.me/ultrasoundrelay) for details.

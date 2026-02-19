@@ -10,7 +10,6 @@
   * [getting started](builders/builder-getting-started.md)
   * [bid adjustment](builders/bid-adjustment.md)
   * [bid forwarding](builders/bid-forwarding.md)
-  * [direct auction connections](builders/direct-auction-connections.md)
   * [optimistic relaying](builders/optimistic-relaying-builder-guide.md)
   * [optimistic v3](builders/optimistic-v3.md)
   * [recent registration](builders/recent-registration.md)

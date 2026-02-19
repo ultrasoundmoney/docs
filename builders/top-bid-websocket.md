@@ -32,4 +32,4 @@ Use persistent connections if possible. When closing connections please make sur
 
 You can find an example implementation here: [https://github.com/ultrasoundmoney/top-bid-websocket-client](https://github.com/ultrasoundmoney/top-bid-websocket-client)
 
-If <1ms latency matters to you, the websocket is available directly from the auction server as well, see [direct-auction-connections.md](direct-auction-connections.md "mention").
+If <1ms latency matters to you, the websocket is available directly from the auction server as well, see [Broken link](/broken/pages/rUTXeGkc4LshhqFKWLwu "mention").

@@ -86,7 +86,7 @@ struct AdjustableDehydratedBidSubmission {
     adjustment_data: AdjustmentData,
 }
 
-struct DehydratedBlobs {
+struct DehydratedBlobsBundle {
     /// List of proofs to re-hydrate the BlobsBundle
     proofs: Vec<KzgProof>,
     new_items: Vec<BlobItem>,
